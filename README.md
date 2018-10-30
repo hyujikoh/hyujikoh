@@ -1,7 +1,9 @@
 "# hyujikoh" 
+
 git 명령어
 
 1. 설정과 초기화
+
 git config --global user.name “Your name”
 전역 사용자명 
 
