@@ -150,72 +150,122 @@ git pull // git 서버에서 코드를 다시 받아옵니다.
 관리
 
 git-clean - 작업 트리에서 untracked 파일을 제거
+
 git-clean -d : untracked 디렉토리 이외의 untracked 파일 제거
+
 git-clean -f : Git구성 변수인 clean.requireForce가 false로 설정되지 않은 경우 
-       git clean은 -f, -n 또는 -i를 지정하지 않으면 파일이나 디렉토리를 
-       삭제하지 않습니다.
+git clean은 -f, -n 또는 -i를 지정하지 않으면 파일이나 디렉토리를 
+삭제하지 않습니다.
+
 git-clean -q : 오류만 표기
+
 git-clean -n : 실제로 아무것도 제거하지 않고 수행 할 작업만 표기   
+
 git-clean -x : -e옵션과 함께 사용하여 주어진 무시 규칙을 계속 사용하여 빌드를 포함해
-       모든 파일 제거가능
+모든 파일 제거가능
+
 git-clean -X : 무시된 파일만 제거가능
 
+
 git-gc - 불필요한 파일 정리 및 로컬 저장소 최적화
+
 git-gc --aggressive : 더 많은 시간을 투자해 최적화에 신경씀
+
 git-gc --auto : 하우스 키핑이 필요한지 여부확인
+
 git-gc --prune : 지정된 날짜보다 오래된 객체 제거
+
 git-gc --quiet : 모든 상황을 표시하지않음
+
 git-gc --force : 같은 저장소에 실행중인 다른 git gc가 있어도 실행되도록 함
-   
+
 git-fsck - db에 있는 객체의 연결성과 유효성을 확인
+
 git-fsck --unreachable : 존재하지만 참조노드에 도달할 수 없는 객체 표시
+
 git-fsck --dangling : 존재하지만 직접 사용되지 않은 개체 표시
+
 git-fsck --root : 루트 표기
+
 git-fsck --tags : 태그 표기
+
 git-fsck --full :  대체 오브젝트 풀의 하위 디렉토리를 팩하고 기본값으로 만듬
+
 git-fsck --connectivity-only : 태그,커밋 및 트리 객체의 연결만 검사
+
 git-fsck --strict : 보다 엄격한 검사를 사용함
+
 git-fsck --verbose : 자세하게 설명
+
 git-fsck --name-objects : 도달 할 수 있는 객체의 이름을 표기할 때, 호환되는
-                   도달 가능한 방법을 설명하는 이름도 표시함
+
+도달 가능한 방법을 설명하는 이름도 표시함
 
 git-reflog - reflog정보 관리
+
 git-reflog --all : reflog의 모든 과정 정의
+
 git-reflog --expire : 지정된 시간보다 오래된 항목 제거  
+
 git-reflog --expire-unreachable :  지정된 시간보다 오래된 항목을 현재 팁에서 도달 할 수 없도록 제거함
+
 git-reflog --updateref : 이전 상위 항목이 제거된 경우 상위 reflog항목의 값으로 업데이트
+
 git-reflog --rewrite : reflog 항목의 선행작업이 제거된 경우 새 필드와 같도록 조정
+
 git-reflog --dry-run : 실제로 모든 항목을 제거하지 않고 정리된 것이 뭔지 보여줌
+
 git-reflog --verbose : 화면에 추가정보를 보여줌
 
 git-instaweb - gitweb에서 작업 저장소를 찾음
    
 git-instaweb --local : 웹서버를 로컬 ip에만 바인드 함
+
 git-instaweb --httpd : 실행될 HTTP 데몬 명령을 함
+
 git-instaweb --module-path : 모듈 경로
+
 git-instaweb --port : httpd를 바인드할 포트 번호 설정
+
 git-instaweb --browser : gitweb 페이지를 보는데 사용할 웹 브라우저설정
+
 git-instaweb --start : httpd인스턴스를 시작
+
 git-instaweb --stop : httpd인스턴스를 멈추고 종료함
-   
+
 git-archive - 명명된 트리에서 파일의 아카이브 생성
    
 git-archive --list : 사용 가능한 모든 형식을 표기
+
 git-archive --verbose : 진행 상황의 오류를 표시
+
 git-archive --prefix : 아카이브의 각 파일 이름앞에 <prefix>를 붙임
+
 git-archive --output : 아카이브를 stdout 대신 <file>에 사용
+
 git-archive --worktree-attributes : 작업 트리의 gitattributes파일 속성을 찾음
+
 git-archive --remote : 원격저장소에서 tar 아카이브를 검색함
+
 git-archive --exec : 원격 측의 경로를 지정하기위해 사용
+
 git-archive --tree-ish : 아카이브를 생성하는 트리
+
 git-archive --path : 선택적 경로 매개 변수가 없으면 현재 작업 디렉토리의 모든 파일과 하위 디렉토리가 아카이브에 포함
-     
+
+
 git-bundle : 아카이브로 객체 및 참조 이동
+
 git-bundle --create<file> : 파일이라는 번들 만드는데 사용
+
 git-bundle --verify<file> : 번들파일이 유효하고 현재 저장소에 정상적으로 적용되는지 확인
+
 git-bundle --list-heads<file> : 번들에 정의 된 참조 나열
+
 git-bundle --unbundle<file> : 번들에 있는 객체를 저장소에 저장하기 위해 git index-pack에 전달한 다음 정의된 모든 참조 이름을 표시
+
 git-bundle --git-rev-list-args : git rev-parse와 git rev-list에 허용되는 인수목록은 전송에 대한 특정 객체 및 참조를 지정
+
 
 
 
